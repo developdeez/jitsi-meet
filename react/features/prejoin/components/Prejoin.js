@@ -152,9 +152,9 @@ class Prejoin extends Component<Props, State> {
      * @static
      */
     static defaultProps = {
-        showConferenceInfo: true,
+        showConferenceInfo: false,
         showJoinActions: true,
-        showSkipPrejoin: true
+        showSkipPrejoin: false
     };
 
     /**
@@ -314,14 +314,14 @@ class Prejoin extends Component<Props, State> {
                 {showJoinActions && (
                     <div className = 'prejoin-input-area-container'>
                         <div className = 'prejoin-input-area'>
-                            <InputField
+                            {/* <InputField
                                 autoFocus = { true }
                                 className = { showError ? 'error' : '' }
                                 hasError = { showError }
                                 onChange = { _setName }
                                 onSubmit = { joinConference }
                                 placeHolder = { t('dialog.enterDisplayName') }
-                                value = { name } />
+                                value = { name } /> */}
 
                             {showError && <div
                                 className = 'prejoin-error'

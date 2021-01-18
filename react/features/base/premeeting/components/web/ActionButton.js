@@ -74,7 +74,7 @@ function ActionButton({
             data-testid = { testId ? testId : undefined }
             onClick = { disabled ? undefined : onClick }>
             {children}
-            {hasOptions && <div
+            {/* {hasOptions && <div
                 className = 'options'
                 data-testid = 'prejoin.joinOptions'
                 onClick = { disabled ? undefined : onOptionsClick }>
@@ -83,7 +83,7 @@ function ActionButton({
                     size = { 14 }
                     src = { OptionsIcon } />
             </div>
-            }
+            } */}
         </div>
     );
 }

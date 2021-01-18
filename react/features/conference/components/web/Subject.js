@@ -60,9 +60,9 @@ class Subject extends Component<Props> {
 
         return (
             <div className = { `subject ${_visible ? 'visible' : ''}` }>
-                { _showSubject && <span className = 'subject-text'>{ _subject }</span>}
+                {/* { _showSubject && <span className = 'subject-text'>{ _subject }</span>} */}
                 { _showParticipantCount && <ParticipantsCount /> }
-                { !_hideConferenceTimer && <ConferenceTimer /> }
+                {/* { !_hideConferenceTimer && <ConferenceTimer /> } */}
             </div>
         );
     }

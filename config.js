@@ -344,7 +344,7 @@ var config = {
     // disable1On1Mode: false,
 
     // Default language for the user interface.
-    // defaultLanguage: 'en',
+     defaultLanguage: 'en',
 
     // Disables profile and the edit of all fields from the profile settings (display name and email)
     // disableProfile: false,
@@ -565,7 +565,7 @@ var config = {
 
     // If true, any checks to handoff to another application will be prevented
     // and instead the app will continue to display in the current browser.
-    // disableDeepLinking: false,
+     disableDeepLinking: true,
 
     // A property to disable the right click context menu for localVideo
     // the menu has option to flip the locally seen video for local presentations
@@ -574,10 +574,10 @@ var config = {
     // Mainly privacy related settings
 
     // Disables all invite functions from the app (share, invite, dial out...etc)
-    // disableInviteFunctions: true,
+     disableInviteFunctions: true,
 
     // Disables storing the room name to the recents list
-    // doNotStoreRoom: true,
+     doNotStoreRoom: true,
 
     // Deployment specific URLs.
     // deploymentUrls: {
@@ -590,13 +590,13 @@ var config = {
     // },
 
     // Options related to the remote participant menu.
-    // remoteVideoMenu: {
-    //     // If set to true the 'Kick out' button will be disabled.
-    //     disableKick: true
-    // },
+    remoteVideoMenu: {
+        // If set to true the 'Kick out' button will be disabled.
+        disableKick: true
+    },
 
     // If set to true all muting operations of remote participants will be disabled.
-    // disableRemoteMute: true,
+     disableRemoteMute: true,
 
     // Enables support for lip-sync for this client (if the browser supports it).
     // enableLipSync: false
@@ -630,13 +630,13 @@ var config = {
     // hideConferenceSubject: true
 
     // Hides the conference timer.
-    // hideConferenceTimer: true,
+     hideConferenceTimer: true,
 
     // Hides the participants stats
     // hideParticipantsStats: true
 
     // Sets the conference subject
-    // subject: 'Conference Subject',
+     subject: 'Foxtail Meet',
 
     // List of undocumented settings used in jitsi-meet
     /**

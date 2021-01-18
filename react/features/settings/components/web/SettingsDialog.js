@@ -129,12 +129,12 @@ function _mapStateToProps(state) {
 
     // The settings sections to display.
     const showDeviceSettings = configuredTabs.includes('devices');
-    const moreTabProps = getMoreTabProps(state);
-    const { showModeratorSettings, showLanguageSettings, showPrejoinSettings } = moreTabProps;
-    const showProfileSettings
-        = configuredTabs.includes('profile') && !state['features/base/config'].disableProfile;
-    const showCalendarSettings
-        = configuredTabs.includes('calendar') && isCalendarEnabled(state);
+   // const moreTabProps = getMoreTabProps(state);
+    // const { showModeratorSettings, showLanguageSettings, showPrejoinSettings } = moreTabProps;
+    // const showProfileSettings
+    //     = configuredTabs.includes('profile') && !state['features/base/config'].disableProfile;
+    // const showCalendarSettings
+    //     = configuredTabs.includes('calendar') && isCalendarEnabled(state);
     const tabs = [];
 
     if (showDeviceSettings) {
@@ -163,48 +163,48 @@ function _mapStateToProps(state) {
         });
     }
 
-    if (showProfileSettings) {
-        tabs.push({
-            name: SETTINGS_TABS.PROFILE,
-            component: ProfileTab,
-            label: 'profile.title',
-            props: getProfileTabProps(state),
-            styles: 'settings-pane profile-pane',
-            submit: submitProfileTab
-        });
-    }
+    // if (showProfileSettings) {
+    //     tabs.push({
+    //         name: SETTINGS_TABS.PROFILE,
+    //         component: ProfileTab,
+    //         label: 'profile.title',
+    //         props: getProfileTabProps(state),
+    //         styles: 'settings-pane profile-pane',
+    //         submit: submitProfileTab
+    //     });
+    // }
 
-    if (showCalendarSettings) {
-        tabs.push({
-            name: SETTINGS_TABS.CALENDAR,
-            component: CalendarTab,
-            label: 'settings.calendar.title',
-            styles: 'settings-pane calendar-pane'
-        });
-    }
+    // if (showCalendarSettings) {
+    //     tabs.push({
+    //         name: SETTINGS_TABS.CALENDAR,
+    //         component: CalendarTab,
+    //         label: 'settings.calendar.title',
+    //         styles: 'settings-pane calendar-pane'
+    //     });
+    // }
 
-    if (showModeratorSettings || showLanguageSettings || showPrejoinSettings) {
-        tabs.push({
-            name: SETTINGS_TABS.MORE,
-            component: MoreTab,
-            label: 'settings.more',
-            props: moreTabProps,
-            propsUpdateFunction: (tabState, newProps) => {
-                // Updates tab props, keeping users selection
+    // if (showModeratorSettings || showLanguageSettings || showPrejoinSettings) {
+    //     tabs.push({
+    //         name: SETTINGS_TABS.MORE,
+    //         component: MoreTab,
+    //         label: 'settings.more',
+    //         props: moreTabProps,
+    //         propsUpdateFunction: (tabState, newProps) => {
+    //             // Updates tab props, keeping users selection
 
-                return {
-                    ...newProps,
-                    currentLanguage: tabState.currentLanguage,
-                    followMeEnabled: tabState.followMeEnabled,
-                    showPrejoinPage: tabState.showPrejoinPage,
-                    startAudioMuted: tabState.startAudioMuted,
-                    startVideoMuted: tabState.startVideoMuted
-                };
-            },
-            styles: 'settings-pane more-pane',
-            submit: submitMoreTab
-        });
-    }
+    //             return {
+    //                 ...newProps,
+    //                 currentLanguage: tabState.currentLanguage,
+    //                 followMeEnabled: tabState.followMeEnabled,
+    //                 showPrejoinPage: tabState.showPrejoinPage,
+    //                 startAudioMuted: tabState.startAudioMuted,
+    //                 startVideoMuted: tabState.startVideoMuted
+    //             };
+    //         },
+    //         styles: 'settings-pane more-pane',
+    //         submit: submitMoreTab
+    //     });
+    // }
 
     return { _tabs: tabs };
 }

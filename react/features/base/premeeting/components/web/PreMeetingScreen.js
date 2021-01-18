@@ -98,14 +98,14 @@ export default class PreMeetingScreen extends PureComponent<Props> {
                             participantId = 'local'
                             size = { 80 } />
                     )}
-                    {showConferenceInfo && (
+                    {/* {showConferenceInfo && (
                         <>
                             <div className = 'title'>
                                 { title }
                             </div>
                             <CopyMeetingUrl />
                         </>
-                    )}
+                    )} */}
                     { this.props.children }
                     <div className = 'media-btn-container'>
                         <AudioSettingsButton visible = { true } />

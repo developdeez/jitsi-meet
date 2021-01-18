@@ -114,7 +114,7 @@ class WelcomePage extends AbstractWelcomePage {
         this._setAdditionalToolbarContentRef
             = this._setAdditionalToolbarContentRef.bind(this);
         this._onTabSelected = this._onTabSelected.bind(this);
-        this._renderFooter = this._renderFooter.bind(this);
+      //  this._renderFooter = this._renderFooter.bind(this);
     }
 
     /**
@@ -145,11 +145,11 @@ class WelcomePage extends AbstractWelcomePage {
             );
         }
 
-        if (this._shouldShowAdditionalCard()) {
-            this._additionalCardRef.appendChild(
-                this._additionalCardTemplate.content.cloneNode(true)
-            );
-        }
+        // if (this._shouldShowAdditionalCard()) {
+        //     this._additionalCardRef.appendChild(
+        //         this._additionalCardTemplate.content.cloneNode(true)
+        //     );
+        // }
     }
 
     /**
@@ -179,12 +179,11 @@ class WelcomePage extends AbstractWelcomePage {
 
         return (
             <div
-                className = { `welcome ${showAdditionalContent
-                    ? 'with-content' : 'without-content'}` }
+                className = { `welcome with-content` }
                 id = 'welcome_page'>
-                <div className = 'welcome-watermark'>
+                {/* <div className = 'welcome-watermark'>
                     <Watermarks defaultJitsiLogoURL = { DEFAULT_WELCOME_PAGE_LOGO_URL } />
-                </div>
+                </div> */}
 
                 <div className = 'header'>
                     <div className = 'welcome-page-settings'>
@@ -241,7 +240,7 @@ class WelcomePage extends AbstractWelcomePage {
                             </button>
                         </div>
 
-                        { _moderatedRoomServiceUrl && (
+                        {/* { _moderatedRoomServiceUrl && (
                             <div id = 'moderated-meetings'>
                                 <p>
                                     {
@@ -249,29 +248,12 @@ class WelcomePage extends AbstractWelcomePage {
                                         t, 'welcomepage.moderatedMessage', { url: _moderatedRoomServiceUrl })
                                     }
                                 </p>
-                            </div>)}
+                            </div>)} */}
                     </div>
                 </div>
 
-                <div className = 'welcome-cards-container'>
-                    <div className = 'welcome-card-row'>
-                        <div className = 'welcome-tabs welcome-card welcome-card--blue'>
-                            { this._renderTabs() }
-                        </div>
-                        { showAdditionalCard
-                            ? <div
-                                className = 'welcome-card welcome-card--dark'
-                                ref = { this._setAdditionalCardRef } />
-                            : null }
-                    </div>
-
-                    { showAdditionalContent
-                        ? <div
-                            className = 'welcome-page-content'
-                            ref = { this._setAdditionalContentRef } />
-                        : null }
-                </div>
-                { DISPLAY_WELCOME_FOOTER && this._renderFooter()}
+     
+                {/* { DISPLAY_WELCOME_FOOTER && this._renderFooter()} */}
             </div>
 
         );
